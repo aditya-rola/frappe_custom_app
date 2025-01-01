@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ _('Birthday Reminder') }}</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            color: #333333;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        .email-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #5A9E6F;
+        }
+        h3 {
+            color: #FF6347;
+        }
+        .birthday-list {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e0f7fa;
+            border-radius: 6px;
+        }
+        .birthday-item {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="email-container">
+        <h2>{{ _('Birthday Reminder') }}</h2>
+        <p>{{ _('Hello,') }}</p>
+
+        <p>{{ message }}</p>
+
+        {% if birthday_persons %}
+            <div class="birthday-list">
+                <h3>{{ _('Upcoming Birthdays:') }}</h3>
+                <ul>
+                {% for person in birthday_persons %}
+                    <li class="birthday-item">
+                        <strong>{{ person.name }}</strong> - {{ person.birth_date.strftime('%d %B') }}
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        {% else %}
+            <p>{{ _('No birthdays are coming up in the next few days.') }}</p>
+        {% endif %}
+
+        <div class="footer">
+            <p>{{ _('Best regards,') }}<br>{{ _('Your Company') }}</p>
+        </div>
+    </div>
+
+</body>
+</html>

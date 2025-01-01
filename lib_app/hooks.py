@@ -123,7 +123,11 @@ app_license = "MIT"
 # 		"on_trash": "method"
 # 	}
 # }
-
+doc_events = {
+    'Payments': {
+        "on_update": 'lib_app.custom_scripts.deduct_fee_and_sendmail_on_approval'
+    }
+}
 # Scheduled Tasks
 # ---------------
 

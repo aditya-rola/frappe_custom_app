@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ transaction_type }} Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: {% if transaction_type == 'Issue' %} #2c3e50 {% else %} #27ae60 {% endif %};
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .label {
+            font-weight: bold;
+            color: #2980b9;
+        }
+        .value {
+            color: #2c3e50;
+        }
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 20px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>{{ transaction_type }} Confirmation</h2>
+        <p><span class="label">Book Name:</span> <span class="value">{{ book_name }}</span></p>
+        <p><span class="label">Title:</span> <span class="value">{{ title }}</span></p>
+        <p><span class="label">Author:</span> <span class="value">{{ author }}</span></p>
+        <p><span class="label">Member (Current Book Issuer):</span> <span class="value">{{ member }}</span></p>
+        {% if transaction_type == 'Issue' %}
+            <p><span class="label">Issue Date:</span> <span class="value">{{ issue_date }}</span></p>
+        {% elif transaction_type == 'Return' %}
+            <p><span class="label">Book Issued:</span> <span class="value">{{ book_issued }}</span></p>
+            <p><span class="label">Rent Fee:</span> <span class="value">{{ rent_fee }}</span></p>
+            <p><span class="label">Return Date:</span> <span class="value">{{ return_date }}</span></p>
+        {% endif %}
+    </div>
+    <div class="footer">
+        <p>Thank you for using our library service!</p>
+    </div>
+</body>
+</html>

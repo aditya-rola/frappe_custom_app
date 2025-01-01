@@ -1,0 +1,47 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": ".##-{book}-.#####",
+ "creation": "2024-12-26 14:09:58.098391",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "book",
+  "issued_book",
+  "returned_book"
+ ],
+ "fields": [
+  {
+   "fieldname": "book",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Book",
+   "options": "Books",
+   "reqd": 1
+  },
+  {
+   "fieldname": "issued_book",
+   "fieldtype": "Date",
+   "label": "issued Book"
+  },
+  {
+   "fieldname": "returned_book",
+   "fieldtype": "Date",
+   "label": "Returned Book"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-26 14:09:58.098391",
+ "modified_by": "Administrator",
+ "module": "Lib App",
+ "name": "Issued Books Table",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
