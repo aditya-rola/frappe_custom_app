@@ -14,7 +14,7 @@ def execute(filters=None):
 
     book_filter = filters.get("book") if filters else None
     month_filter = filters.get("month") if filters else None
-    year = 2024  
+    year = 2025
 
     # Calculate the start and end date for the selected month
     if month_filter:

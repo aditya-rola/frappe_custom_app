@@ -125,7 +125,7 @@ app_license = "MIT"
 # }
 doc_events = {
     'Payments': {
-        "on_update": 'lib_app.custom_scripts.deduct_fee_and_sendmail_on_approval'
+        "on_update": 'lib_app.custom_scripts.scripts.deduct_fee_and_sendmail_on_approval'
     }
 }
 # Scheduled Tasks
