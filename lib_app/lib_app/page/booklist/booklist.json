@@ -1,0 +1,23 @@
+{
+ "content": null,
+ "creation": "2025-01-06 09:27:55.252806",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2025-01-06 10:17:26.511290",
+ "modified_by": "Administrator",
+ "module": "Lib App",
+ "name": "booklist",
+ "owner": "Administrator",
+ "page_name": "booklist",
+ "roles": [
+  {
+   "role": "Librarian"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 1,
+ "title": "List of Books"
+}

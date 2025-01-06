@@ -1,0 +1,132 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow",
+  "document_type": "Payments",
+  "is_active": 1,
+  "modified": "2025-01-02 16:09:05.298716",
+  "name": "Return book payment workflow",
+  "override_status": 0,
+  "send_email_alert": 0,
+  "states": [
+   {
+    "allow_edit": "Librarian",
+    "avoid_status_override": 0,
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Return book payment workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Draft",
+    "update_field": "status",
+    "update_value": "pending"
+   },
+   {
+    "allow_edit": "Librarian",
+    "avoid_status_override": 0,
+    "doc_status": "1",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Return book payment workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Pending",
+    "update_field": "status",
+    "update_value": "pending"
+   },
+   {
+    "allow_edit": "Librarian",
+    "avoid_status_override": 0,
+    "doc_status": "1",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Return book payment workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Approval",
+    "update_field": "status",
+    "update_value": "pending"
+   },
+   {
+    "allow_edit": "Librarian",
+    "avoid_status_override": 0,
+    "doc_status": "1",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Return book payment workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Approved",
+    "update_field": "status",
+    "update_value": "completed"
+   },
+   {
+    "allow_edit": "Librarian",
+    "avoid_status_override": 0,
+    "doc_status": "2",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Return book payment workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Rejected",
+    "update_field": "status",
+    "update_value": "pending"
+   }
+  ],
+  "transitions": [
+   {
+    "action": "Switch to Pending",
+    "allow_self_approval": 1,
+    "allowed": "Librarian",
+    "condition": null,
+    "next_state": "Pending",
+    "parent": "Return book payment workflow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "state": "Draft"
+   },
+   {
+    "action": "Review",
+    "allow_self_approval": 1,
+    "allowed": "Librarian",
+    "condition": null,
+    "next_state": "Approval",
+    "parent": "Return book payment workflow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "state": "Pending"
+   },
+   {
+    "action": "Approve",
+    "allow_self_approval": 1,
+    "allowed": "Librarian",
+    "condition": null,
+    "next_state": "Approved",
+    "parent": "Return book payment workflow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "state": "Approval"
+   },
+   {
+    "action": "Reject",
+    "allow_self_approval": 1,
+    "allowed": "Librarian",
+    "condition": null,
+    "next_state": "Rejected",
+    "parent": "Return book payment workflow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "state": "Approval"
+   }
+  ],
+  "workflow_name": "Return book payment workflow",
+  "workflow_state_field": "workflow_state"
+ }
+]

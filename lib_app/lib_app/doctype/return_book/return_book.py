@@ -43,7 +43,7 @@ class ReturnBook(Document):
         recipients = []
         recipients.append(member.email) if member.email else []
 
-        pdf_content = frappe.attach_print(self.doctype, self.name, print_format="Standard")
+        pdf_content = frappe.attach_print(self.doctype, self.name, print_format="Custom 123")
         args = {
             'transaction_type' : 'Return',
             'book_name' : self.book,

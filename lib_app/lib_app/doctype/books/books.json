@@ -43,8 +43,17 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-12-26 12:50:37.501378",
+ "links": [
+  {
+   "link_doctype": "Issued Book",
+   "link_fieldname": "book"
+  },
+  {
+   "link_doctype": "Return Book",
+   "link_fieldname": "book"
+  }
+ ],
+ "modified": "2025-01-03 14:35:05.102602",
  "modified_by": "Administrator",
  "module": "Lib App",
  "name": "Books",

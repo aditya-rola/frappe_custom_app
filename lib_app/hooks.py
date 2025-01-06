@@ -5,6 +5,27 @@ app_description = "Library Management App"
 app_email = "admin@gmail.com"
 app_license = "MIT"
 
+
+
+
+fixtures = [
+    {
+        "dt": "Books",
+    },
+    {
+        "dt": "Workflow",
+        "filters": {"document_type": "Payments"} 
+    },
+    {
+        "dt": "Report",
+        "filters": {"name": "Book Monthly Revenue --Script report"}
+    },
+    {
+        "dt": "Print Format",
+        "filters": {"name": "Custom 123",}  # Your custom print format for Books
+    }
+]
+
 # Includes in <head>
 # ------------------
 
@@ -123,11 +144,11 @@ app_license = "MIT"
 # 		"on_trash": "method"
 # 	}
 # }
-doc_events = {
-    'Payments': {
-        "on_update": 'lib_app.custom_scripts.scripts.deduct_fee_and_sendmail_on_approval'
-    }
-}
+# doc_events = {
+#     'Payments': {
+#         "on_update": 'lib_app.custom_scripts.scripts.deduct_fee_and_sendmail_on_approval'
+#     }
+# }
 # Scheduled Tasks
 # ---------------
 
